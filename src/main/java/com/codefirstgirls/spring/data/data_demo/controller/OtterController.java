@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("otter")
@@ -18,8 +18,7 @@ public class OtterController {
     private OtterRepository otterRepository;
 
     @GetMapping
-    public ResponseEntity<Collection<Otter>> getAllOtters() {
-        val otters = otterRepository.findAll();
-        return ResponseEntity.ok(otters);
+    public List<Otter> getAllOtters() {
+        return otterRepository.findAll();
     }
 }
