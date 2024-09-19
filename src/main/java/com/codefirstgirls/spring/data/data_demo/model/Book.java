@@ -5,7 +5,7 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
-@Builder
+@Builder(toBuilder = true)
 @Data
 public class Book {
     private final String title;
